@@ -1,0 +1,22 @@
+{% extends 'base.html' %} {% block content %}
+<!-- BODY CODE -->
+<div class="bg-white w-full min-h-screen">
+  <!-- LOGIN FORM CODE -->
+  <div>
+    <table>
+      <form method="POST">
+        {% csrf_token %} {% form.as_table %}
+        <button class="bg-sky-600 hover:bg-sky-800 p-3 rounded-lg">Create</button>
+      </form>
+    </table>
+  </div>
+  <!-- END OF LOGIN FORM CODE -->
+  <footer class="text-small bottom-0 h-max-10 bg-slate-100 px-2 mt-28">
+    <!-- <hr class="outline-none bg-slate-200 h-[1px] w-full" /> -->
+    <div class="p-5 mt-3">
+      <p class="text-center text-xs text-slate-800"><span class="text-slate-900 font-semibold">David Robby Sanjaya</span> Copyright 2022</p>
+    </div>
+  </footer>
+  <!-- END OF BODY CODE -->
+  {% endblock content %}
+</div>

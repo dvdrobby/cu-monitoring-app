@@ -1,3 +1,53 @@
 {% block sidebar %}
-<h1>Sidebar</h1>
+<!-- SIDEBAR CODE -->
+<div class="sidebar top-0 left-0 bottom-0 bg-sky-700 w-[300px] text-slate-50 min-h-screen">
+  <div class="mt-4 mx-auto">
+    <div class="bg-slate-300 w-24 h-24 rounded-full border-white border-4 mx-auto">
+      <div class="text-slate-600 flex text-5xl">
+        <ion-icon class="mx-auto mt-6" name="person-outline"></ion-icon>
+      </div>
+    </div>
+    <p class="font-light text-center mt-2">Hallo, <a href="#" class="font-bold hover:scale-110 hover:text-slate-300">Username</a></p>
+  </div>
+  <hr class="mt-10 mx-auto w-3/4 h-[2px] bg-sky-200 border-0" />
+
+  <div class="mt-5 max-w-full">
+    <div class="flex justify-start py-3 ml-2 w-full rounded-md text-center hover:bg-white hover:text-slate-900 duration-300">
+      <span class="text-2xl ml-5">
+        <ion-icon name="chatbox-outline"></ion-icon>
+      </span>
+      <a href="#" class="ml-5 text-start">Message</a>
+    </div>
+  </div>
+
+  <div class="max-w-full">
+    <div class="flex justify-start py-3 ml-2 w-full rounded-md text-center hover:bg-white hover:text-slate-900 duration-300">
+      <span class="text-2xl ml-5">
+        <ion-icon name="documents-outline"></ion-icon>
+      </span>
+      <p class="ml-5 text-start">Forms</p>
+      <span class="ml-36 text-2xl cursor-pointer" onclick="rotate()" id="arrow"><ion-icon name="chevron-up-outline"></ion-icon></span>
+    </div>
+  </div>
+
+  <div id="form_list" class="w-[300px] h-[200px] overflow-x-hidden overflow-y-auto fixed hidden">
+    {% for form in object_list %}
+    <div class="py-3 ml-2 w-full rounded-md hover:bg-white hover:text-slate-900 cursor-pointer duration-300">
+      <a href="{% url 'form' form.form_slug %}" class="ml-16 text-start text-sm">{{form.form_name}}</a>
+    </div>
+
+    {% endfor %}
+  </div>
+
+  <hr class="mt-52 mx-auto w-3/4 h-[2px] bg-blue-200 border-0" />
+  <div class="mt-3 max-w-full">
+    <div class="flex justify-start py-3 ml-2 w-full rounded-md text-center hover:bg-white hover:text-slate-900 duration-300">
+      <span class="text-2xl ml-5">
+        <ion-icon name="log-out-outline"></ion-icon>
+      </span>
+      <a href="#" class="ml-5 text-start">Logout</a>
+    </div>
+  </div>
+</div>
+<!-- END OF SIDEBAR CODE -->
 {% endblock sidebar %}

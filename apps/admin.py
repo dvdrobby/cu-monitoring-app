@@ -1,3 +1,9 @@
 from django.contrib import admin
 
-# Register your models here.
+from .models import FormModel
+
+
+class FormSlug(admin.ModelAdmin):
+    readonly_fields=['form_slug']
+
+admin.site.register(FormModel, FormSlug)
